@@ -38,6 +38,30 @@ public class MyDate {
 
     public MyDate nextDay() {
         this.day += 1;
+        if (this.month < 7) {
+            if (this.day - 1 == 31) {
+                this.day = 1;
+                this.month += 1;
+            }
+        } else if (this.month > 6) {
+                if (this.day -1 == 30) {
+                    this.day = 1;
+                    if (this.month == 12) {
+                        this.year += 1;
+                        this.month = 1;
+                    } else
+                        this.month += 1;
+                }
+            }
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "MyDate{" +
+                "year=" + year +
+                ", month=" + month +
+                ", day=" + day +
+                '}';
     }
 }
