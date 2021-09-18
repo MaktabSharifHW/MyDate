@@ -43,7 +43,7 @@ public class MyDate {
                 this.day = 1;
                 this.month += 1;
             }
-        } else if (this.month > 6) {
+        } else {
                 if (this.day -1 == 30) {
                     this.day = 1;
                     if (this.month == 12) {
