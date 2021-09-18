@@ -35,5 +35,5 @@ public class MyDate {
     public int getDay() {
         return day;
     }
-    
+
 }
