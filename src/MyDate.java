@@ -37,7 +37,6 @@ public class MyDate {
     }
 
     public MyDate nextDay() {
-        if ()
         this.day += 1;
         return this;
     }
