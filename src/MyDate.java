@@ -36,4 +36,75 @@ public class MyDate {
         return day;
     }
 
+    public MyDate nextDay() {
+        this.day += 1;
+        if (this.month < 7) {
+            if (this.day - 1 == 31) {
+                this.day = 1;
+                this.month += 1;
+            }
+        } else {
+            if (this.day - 1 == 30) {
+                this.day = 1;
+                if (this.month == 12) {
+                    this.year += 1;
+                    this.month = 1;
+                } else
+                    this.month += 1;
+            }
+        }
+        return this;
+    }
+
+    public String nameOfMonth(int numberOfMonth) {
+        String nameOfMonth;
+        switch (numberOfMonth) {
+            case 1:
+                nameOfMonth = "Farvardin";
+                break;
+            case 2:
+                nameOfMonth = "Ordibehesht";
+                break;
+            case 3:
+                nameOfMonth = "Khordad";
+                break;
+            case 4:
+                nameOfMonth = "Tir";
+                break;
+            case 5:
+                nameOfMonth = "Mordad";
+                break;
+            case 6:
+                nameOfMonth = "Shahrivar";
+                break;
+            case 7:
+                nameOfMonth = "Mehr";
+                break;
+            case 8:
+                nameOfMonth = "Aban";
+                break;
+            case 9:
+                nameOfMonth = "Azar";
+                break;
+            case 10:
+                nameOfMonth = "Dey";
+                break;
+            case 11:
+                nameOfMonth = "Bahman";
+                break;
+            case 12:
+                nameOfMonth = "Esfand";
+                break;
+            default:
+                nameOfMonth = "invalid";
+        }
+        return nameOfMonth;
+    }
+
+    @Override
+    public String toString() {
+        return year +
+                " " + nameOfMonth(month) +
+                " " + day;
+    }
 }
