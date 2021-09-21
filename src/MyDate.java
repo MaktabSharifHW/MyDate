@@ -107,4 +107,39 @@ public class MyDate {
                 " " + nameOfMonth(month) +
                 " " + day;
     }
+    public boolean valid_date(int year, int month, int day){
+        boolean valid=false;
+        if (year<= 9999 && year>=1 ){
+            if (month>=1 && month<=6){
+                if (day >=1 && day<=31){
+                    valid=true;
+                }
+            }
+            if (month>=7 && month<=11){
+                if (day >=1 && day<=30){
+                    valid=true;
+                }
+            }
+            if (month == 12){
+                if (day >=1 && day<=29){
+                    valid=true;
+                }
+            }
+
+        }
+        return valid;
+    }
+    public int getMonthLastDay(int month){
+        int lastday=0;
+        if (month>=1 && month <= 6){
+            lastday = 31;
+        }
+        if (month>=7 && month<=11){
+            lastday = 30;
+        }
+        if (month == 12){
+            lastday = 29;
+        }
+        return lastday;
+    }
 }
